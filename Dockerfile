@@ -1,7 +1,12 @@
 # --- Stage 1: The Builder ---
 # We use the official Rust image as a temporary build environment.
 # Using a specific version ensures your builds are repeatable.
-FROM rust:1.79-slim-bookworm AS builder
+FROM rust:1.90.0-slim-bookworm AS builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends libssl-dev pkg-config
+
+# Install build dependencies required by some Rust crates.
+
 
 # Set the working directory inside the container.
 WORKDIR /usr/src/app
