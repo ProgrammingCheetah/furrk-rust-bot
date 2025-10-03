@@ -47,8 +47,8 @@ pipeline {
                     echo "Deploying to local Docker instance..."
                     sh """
                         cd /opt/rust-services && \\
-                        docker-compose -p rust_dev -f docker-compose.dev.yml pull telegram-bot && \\
-                        docker-compose -p rust_dev -f docker-compose.dev.yml up -d --no-deps telegram-bot
+                        docker compose -p rust_dev -f docker-compose.dev.yml pull telegram-bot && \\
+                        docker compose -p rust_dev -f docker-compose.dev.yml up -d --no-deps telegram-bot
                     """
                 }
             }
