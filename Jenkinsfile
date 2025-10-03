@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     echo "Building and testing branch: ${env.BRANCH_NAME}"
-                    docker.image('rust:1.79-slim').inside {
+                    docker.image('rust:1.90.0-slim').inside {
                         sh 'cargo build --release'
                         sh 'cargo test --release'
                     }
