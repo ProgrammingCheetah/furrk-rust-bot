@@ -31,7 +31,7 @@ pipeline {
         // --- Stage 2: Publish & Deploy Develop Branch ---
         stage('Publish & Deploy Develop') {
             when {
-                branch 'develop'
+                branch '*/develop'
             }
             steps {
                 script {
