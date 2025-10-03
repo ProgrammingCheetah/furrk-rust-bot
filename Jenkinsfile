@@ -39,7 +39,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
                     }
-                    def fullImageName = "${DOCKER_USERNAME}/${IMAGE_NAME}:latest"
+                    def fullImageName = "docker.io/${DOCKER_USERNAME}/${IMAGE_NAME}:latest"
                     sh "docker build -t ${fullImageName} ."
                     sh "docker push ${fullImageName}"
                     echo "Pushed Development Image: ${fullImageName}"
