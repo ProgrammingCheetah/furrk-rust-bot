@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = 'DOCKERHUB_CREDENTIALS'
-        DOCKER_USERNAME = 'ZuriTheChee'
+        DOCKER_USERNAME = 'zurithechee'
         // --- CHANGE: The image name for this service ---
         IMAGE_NAME = 'furrk-rust-bot'
     }
