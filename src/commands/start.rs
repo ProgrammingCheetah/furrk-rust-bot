@@ -9,6 +9,7 @@ pub struct StartCommand;
 #[async_trait]
 impl CommandType for StartCommand {
     fn name(&self) -> &str {
+        // TODO: Change to "start"
         "start"
     }
 
