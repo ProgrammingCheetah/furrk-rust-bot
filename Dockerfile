@@ -23,7 +23,7 @@ RUN cargo build --release
 # This makes the image small and reduces the attack surface.
 FROM debian:bookworm-slim AS final
 
-RUN apt-get update && apt-get install -y --no-install-recommends libssl3 && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends libssl3 ca-certificates && rm -rf /var/lib/apt/lists/*
 
 
 # Set the working directory.
